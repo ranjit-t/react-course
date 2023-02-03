@@ -1,26 +1,95 @@
+
 import './App.css';
-import React, { useState } from 'react';
 
 function App() {
- let[count,setCount] = useState(0);
-
-function Add(){
-  setCount(count+1);
-  console.log(count);
-}
-function Remove(){
-  setCount(count-1);
-  console.log(count);
-}
-function Reset(){
-  setCount(0);
-  console.log(count);
-}
-
+   const headTitle = "Homepage";
+  
   return (
-    <div className="App"><p>{count}</p><button onClick={Add}>Add</button><button onClick={Remove}>Remove</button><button onClick={Reset}>Reset</button></div>
+    <div className="App">
+
+       
+      <h1 className="profile">{headTitle}</h1>  
+      {/* <Job salary={90000} position="Senior SDE" company="Amazon" /> */}
+      {/* <Cond /> */}
+      {/* <Arr /> */}
+      {/* <ShowList /> */}
+      <GasPlanets />
+    </div>
   );
 }
+
+
+
+//  const Job =(props)=>{
+//   return (
+//   <div>
+//  <p style={{color:"green", border:"1px solid grey"}}>{props.salary}</p>
+//  <p>{props.position}</p>
+//  <p>{props.company}</p>
+ 
+//  </div>);
+
+//  };
+
+
+
+
+
+//  const Cond = ()=>{
+
+//   const isAdult = true;
+
+//   return <p>{isAdult?"yes, he is an adult" : "Nope, he is not an adult"}</p>
+
+//  };
+
+
+
+
+
+// const names = ["Aaran", "Aaren", "Aiden" ];
+
+// const ShowList = () =>{
+
+// return (
+//   names.map((name)=>{
+//     return <p>{name}</p>
+//   })
+// );
+
+
+// }
+
+
+
+
+const planets = [
+  { name: "Mars", isGasPlanet: false },
+  { name: "Earth", isGasPlanet: false },
+  { name: "Jupiter", isGasPlanet: true },
+  { name: "Venus", isGasPlanet: false },
+  { name: "Neptune", isGasPlanet: true },
+  { name: "Uranus", isGasPlanet: true },
+];
+
+
+const GasPlanets = ()=>{
+
+  return (<div>{
+    planets.map(
+      (planet)=>{
+        return <p>{planet.isGasPlanet && planet.name}</p>
+        
+      }
+    )
+    }</div>);
+
+}
+
+ 
+
+
+
 
 
 export default App;
